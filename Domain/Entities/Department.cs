@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Domain.Entities;
 
-namespace Domain.Entities
+public class Department : BaseEntity
 {
-    public class Department
-    {
-        public int Id_D { get; }
-        public string Name { get; set; }
-        public List<Employee> Employees { get; }
-        public List<Room> Rooms { get; }
-    }
+    public string Name { get; set; }
+    public string Description { get; set; }
+    public Employee Manager { get; set; }
+    public ICollection<Employee> Employees { get; set; }
 }
